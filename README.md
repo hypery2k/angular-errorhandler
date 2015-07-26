@@ -4,9 +4,9 @@
 > A module for collecting errors, stack traces and other information globally from within your Angular app
 > e.g. for saving to a remote service or for displaying
 
-![Travis Build](https://api.travis-ci.org/hypery2k/angular-errorhandler.svg)
+[![Build Status](https://travis-ci.org/hypery2k/angular-errorhandler.svg?branch=master)](https://travis-ci.org/hypery2k/angular-errorhandler)
 ![Bower version](https://badge.fury.io/hypery2k/angular-errorhandler.svg)
-![Dependencies](https://david-dm.org/hypery2k/angular-errorhandler.png)
+[![ NPM devDependency Status](https://david-dm.org/hypery2k/angular-errorhandler/dev-status.svg)](https://david-dm.org/hypery2k/angular-errorhandler#info=devDependencies)
 
 ##### Reasons to use
 It's anyoing to handle all errors in controller and service and also very defective.
