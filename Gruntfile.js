@@ -65,7 +65,7 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(appConfig.app)
+                            connect.static(appConfig.src)
                         ];
                     }
                 }
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
                             connect.static('.tmp'),
                             connect.static('test'),
                             connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(appConfig.app)
+                            connect.static(appConfig.src)
                         ];
                     }
                 }
@@ -121,35 +121,6 @@ module.exports = function (grunt) {
                 }]
             },
             server: '.tmp'
-        },
-
-        // Compiles Sass to CSS and generates necessary files if requested
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.src %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.src %>/images',
-                javascriptsDir: '<%= yeoman.src %>/scripts',
-                fontsDir: '<%= yeoman.src %>/styles/fonts',
-                importPath: '<%= yeoman.bowerPath %>',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
-                relativeAssets: false,
-                assetCacheBuster: false,
-                raw: 'Sass::Script::Number.precision = 10\n'
-            },
-            dist: {
-                options: {
-                    generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-                }
-            },
-            server: {
-                options: {
-                    sourcemap: true
-                }
-            }
         },
 
         // Add vendor prefixed styles
@@ -304,7 +275,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        'wiredep',
         'autoprefixer',
         'connect:test',
         'karma:unit'
