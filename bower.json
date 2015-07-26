@@ -15,10 +15,10 @@
     "error"
   ],
   "dependencies": {
-    "angular": "1.4.3"
+    "angular": "^1.2.12"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.3"
+    "angular-mocks": "^1.2.12"
   },
   "ignore": [
     "**/.*",
