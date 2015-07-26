@@ -1,0 +1,30 @@
+{
+  "name": "angular-errorhandler",
+  "version": "0.0.1",
+  "description": "Enables general error handling which allows to log errors, e.g for automatically sending back to the backend or for showing to the user",
+  "homepage": "https://github.com/hypery2k/angular-errorhandler",
+  "authors": [
+    "Martin Reinhardt <contact@martinreinhardt-online.de>"
+  ],
+  "license": "MIT",
+  "description": "Error collection and handling module for angular",
+  "main": "./dist/angular-errorhandler.js",
+  "keywords": [
+    "angular",
+    "AngularJS",
+    "error"
+  ],
+  "dependencies": {
+    "angular": "1.4.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
