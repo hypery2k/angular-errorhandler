@@ -17,7 +17,7 @@ So instead of surfacing the log it would be cool to manage them at a central pla
 Install this module:
 
 ```
-bower install angular-errorhandler
+bower install angular-errorhandler --save
 ```
 
 Add the dependencies
