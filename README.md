@@ -40,7 +40,7 @@ app.config(function ($provide, errorHandlerServiceProvider, errorHandlerConfig) 
 
     // enable UI feedback attach
     errorHandlerConfig.feedbackAttach = true;
-    errorHandlerConfig.customerErrorHandler = 'errorHandlingService';
+    errorHandlerConfig.customErrorHandler = 'errorHandlingService';
     // decorate the mentioned [services] with automatic error handling.
     errorHandlerServiceProvider.decorate($provide, ['eventService']);
 });
