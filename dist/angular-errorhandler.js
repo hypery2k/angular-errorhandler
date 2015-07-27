@@ -24,7 +24,7 @@ core.constant('errorHandlerConfig', {
     model: {
         alerts: 'alerts'
     },
-    customerErrorHandler: false,
+    customErrorHandler: false,
     templateUrl: 'holi-error-handler-ui/error-handler-config.ng.html',
     template: '<alert ng-repeat=\"alert in alerts\" type=\"{{alert.type}}\" close=\"alerts.splice($index, 1)\">{{::alert.msg}}</alert>',
     feedbackAttach: false
@@ -76,8 +76,8 @@ core.provider('errorHandlerService', function () {
                     // of error messages to create the "perfect" error message for our users, you should probably do the same. :)
                     if (err) {
 
-                        if (errorHandlerConfig.customerErrorHandler) {
-                            $injector.get(errorHandlerConfig.customerErrorHandler).resolve(err, callback);
+                        if (errorHandlerConfig.customErrorHandler) {
+                            $injector.get(errorHandlerConfig.customErrorHandler).resolve(err, callback);
 
                         } else {
                             if (err && !angular.isUndefined(err.status)) {
@@ -95,7 +95,6 @@ core.provider('errorHandlerService', function () {
                             if (func && func.description) {
                                 err = 'Aufruf zu ' + func.description + ' war fehlerhaft.';
                             }
-
                             $log.error('Es ist ein Fehler aufgetreten: ' + err);
                             callback(err);
                         }
