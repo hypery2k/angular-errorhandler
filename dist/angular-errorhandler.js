@@ -3,7 +3,7 @@
  * Copyright (C)2015 Martin Reinhardt
  * https://github.com/hypery2k/angular-errorhandler
  *
- * Version: 0.0.1
+ * Version: 0.0.4
  * License: MIT
  */
 
@@ -194,6 +194,15 @@ ui.factory('feedbackUI', ["errorHandlerConfig", "$timeout", "$rootScope", functi
                     type: 'danger',
                     msg: msg
                 });
+            },
+            appendInfoMsg: function (msg) {
+                if (!$rootScope[errorHandlerConfig.model.alerts]) {
+                    $rootScope[errorHandlerConfig.model.alerts] = [];
+                }
+                $rootScope[errorHandlerConfig.model.alerts].push({
+                    type: 'info',
+                    msg: msg
+                });
             }
         };
     }]
@@ -220,7 +229,7 @@ ui.run(["$document", "errorHandlerConfig", "$templateCache", function ($document
     if (errorHandlerConfig.template) {
         // Swap the builtin template with the custom template.
         // Create a magic cache key and place the template in the cache.
-        errorHandlerConfig.templateUrl = '$$holi-error-handler-template$$';
+        errorHandlerConfig.templateUrl = '$$angular-errorhandler-template$$';
         $templateCache.put(errorHandlerConfig.templateUrl, errorHandlerConfig.template);
     }
 }]);
