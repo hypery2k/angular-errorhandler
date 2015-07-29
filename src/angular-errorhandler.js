@@ -220,8 +220,15 @@ ui.directive('uiErrorHandler', function ($rootScope, errorHandlerConfig) {
     };
 });
 
-ui.run(function ($document, errorHandlerConfig, $templateCache) {
+ui.run(function ($rootScope, $document, errorHandlerConfig, $templateCache) {
     'use strict';
+
+
+    // register listener to watch route changes
+    $rootScope.$on('$routeChangeStart', function () {
+        // reset alerts
+        $rootScope[errorHandlerConfig.model.alerts] = [];
+    });
 
     // trigger directive
     $document.find('.header').attr('ui-error-handler', '');
