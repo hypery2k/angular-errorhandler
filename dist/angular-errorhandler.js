@@ -3,7 +3,7 @@
  * Copyright (C)2015 Martin Reinhardt
  * https://github.com/hypery2k/angular-errorhandler
  *
- * Version: 0.0.4
+ * Version: 0.1.0
  * License: MIT
  */
 
@@ -220,8 +220,15 @@ ui.directive('uiErrorHandler', ["$rootScope", "errorHandlerConfig", function ($r
     };
 }]);
 
-ui.run(["$document", "errorHandlerConfig", "$templateCache", function ($document, errorHandlerConfig, $templateCache) {
+ui.run(["$rootScope", "$document", "errorHandlerConfig", "$templateCache", function ($rootScope, $document, errorHandlerConfig, $templateCache) {
     'use strict';
+
+
+    // register listener to watch route changes
+    $rootScope.$on('$routeChangeStart', function () {
+        // reset alerts
+        $rootScope[errorHandlerConfig.model.alerts] = [];
+    });
 
     // trigger directive
     $document.find('.header').attr('ui-error-handler', '');
