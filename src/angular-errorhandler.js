@@ -3,7 +3,7 @@
  * Copyright (C)2015 Martin Reinhardt
  * https://github.com/hypery2k/angular-errorhandler
  *
- * Version: 0.0.4
+ * Version: 0.0.5
  * License: MIT
  */
 
