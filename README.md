@@ -1,5 +1,7 @@
 # angular-errorhandler
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/angular-errorhandler.svg)](https://greenkeeper.io/)
+
 
 > A module for collecting errors, stack traces and other information globally from within your Angular app
 > e.g. for saving to a remote service or for displaying
