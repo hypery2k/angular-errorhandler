@@ -27,7 +27,7 @@
     "grunt-karma": "^2.0.0",
     "grunt-newer": "^1.1.1",
     "grunt-ng-annotate": "^3.0.0",
-    "grunt-open": "^0.2.3",
+    "grunt-open": "0.2.3",
     "grunt-text-replace": "^0.4.0",
     "grunt-usemin": "^3.0.0",
     "jasmine-core": "^2.3.4",
